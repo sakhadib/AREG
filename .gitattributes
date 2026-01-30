@@ -1,0 +1,9 @@
+# Track large JSONL files with Git LFS
+*.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# Also track any large JSON result files if they grow
+games/**/transcript.jsonl filter=lfs diff=lfs merge=lfs -text
+games/**/arbiter.jsonl filter=lfs diff=lfs merge=lfs -text
+games/**/ledger.jsonl filter=lfs diff=lfs merge=lfs -text
+elo/elo_history.jsonl filter=lfs diff=lfs merge=lfs -text
+tournaments/*.jsonl filter=lfs diff=lfs merge=lfs -text

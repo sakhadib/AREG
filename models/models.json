@@ -1,0 +1,211 @@
+[
+  {
+    "model_name": "Llama 3.3 70B Instruct",
+    "provider": "Meta",
+    "model_id": "meta-llama/llama-3.3-70b-instruct",
+    "context_window": 131072,
+    "context_window_unit": "tokens",
+    "input_price_per_1m_tokens": 0.10,
+    "output_price_per_1m_tokens": 0.32,
+    "free_variant": "meta-llama/llama-3.3-70b-instruct:free",
+    "architecture": "Auto-regressive transformer with optimized design",
+    "parameters": "70B",
+    "training_tokens": "15T+",
+    "training_time_gpu_hours": 7000000,
+    "release_date": "2024-12-06",
+    "knowledge_cutoff": "December 2023",
+    "supported_languages": [
+      "English",
+      "German",
+      "French",
+      "Italian",
+      "Portuguese",
+      "Hindi",
+      "Spanish",
+      "Thai"
+    ],
+    "capabilities": [
+      "Multilingual dialogue",
+      "Reasoning",
+      "Math",
+      "Code generation",
+      "Tool calling",
+      "Instruction following",
+      "Text and code output"
+    ],
+    "modalities": "text input; text and code output (multilingual)",
+    "use_case": "Cost-efficient general-purpose model with near-405B performance for reasoning, math, coding, and multilingual tasks",
+    "special_features": "Performance comparable to Llama 3.1 405B with better speed and cost, improved tool calling, enhanced multilingual support",
+    "benchmarks": {
+      "MMLU_CoT": 88.6,
+      "MMLU_Pro_CoT": 73.3,
+      "IFEval_Steerability": 88.6
+    },
+    "training_energy": {
+      "power_consumption_w": 700,
+      "co2_emissions_tons": 2040
+    }
+  }
+  ,
+  {
+    "model_name": "GPT-5.2",
+    "provider": "OpenAI",
+    "model_id": "openai/gpt-5.2",
+    "context_window": 400000,
+    "context_window_unit": "tokens",
+    "max_output_tokens": 128000,
+    "input_price_per_1m_tokens": 1.75,
+    "output_price_per_1m_tokens": 14.0,
+    "cached_input_discount": 0.9,
+    "release_date": "2025-12-11",
+    "capabilities": [
+      "Text input",
+      "Image input",
+      "Adaptive reasoning",
+      "Agentic tool calling",
+      "Long-form generation"
+    ],
+    "modalities": "file, image, text input; text output",
+    "use_case": "General-purpose frontier model for complex reasoning, coding, agentic workflows",
+    "special_features": "Adaptive reasoning allocates computation dynamically, 90% discount on cached inputs, improved token efficiency"
+  },
+  {
+    "model_name": "DeepSeek V3.2",
+    "provider": "DeepSeek",
+    "model_id": "deepseek/deepseek-v3.2",
+    "context_window": 128000,
+    "context_window_unit": "tokens",
+    "max_output_tokens": 8000,
+    "input_price_per_1m_tokens": 0.28,
+    "output_price_per_1m_tokens": 0.42,
+    "cache_pricing": {
+      "cache_hit_per_1m_tokens": 0.028,
+      "cache_miss_per_1m_tokens": 0.28
+    },
+    "release_date": "2025-12-01",
+    "capabilities": [
+      "Text input",
+      "Reasoning (with DSA - DeepSeek Sparse Attention)",
+      "Tool calling",
+      "JSON output",
+      "Agentic workflows"
+    ],
+    "modalities": "text input; text output",
+    "use_case": "Cost-efficient reasoning, long-context processing, agentic tool-use, RAG applications",
+    "special_features": "DeepSeek Sparse Attention (DSA) for efficient long-context, reinforcement learning enhanced reasoning, IMO/IOI gold-medal performance, context caching support"
+  },
+  {
+    "model_name": "Qwen3 Next 80B A3B Instruct",
+    "provider": "Alibaba Qwen",
+    "model_id": "qwen/qwen3-next-80b-a3b-instruct",
+    "context_window": 262144,
+    "context_window_unit": "tokens",
+    "input_price_per_1m_tokens": 0.09,
+    "output_price_per_1m_tokens": 1.1,
+    "tiered_pricing": "Higher pricing applies for requests >128K input tokens",
+    "release_date": "2025-09-11",
+    "capabilities": [
+      "Complex reasoning",
+      "Code generation",
+      "Knowledge QA",
+      "Multilingual (Qwen3 series)",
+      "Ultra-long context handling",
+      "Multi-turn dialogue",
+      "RAG",
+      "Tool use",
+      "Agentic workflows"
+    ],
+    "modalities": "text input; text output",
+    "use_case": "Fast, stable responses for complex tasks with preference for deterministic final answers over chain-of-thought, production RAG and agentic workflows",
+    "special_features": "Scaling-efficient training, high throughput, optimized for ultra-long inputs, instruction-tuned without 'thinking' traces, robust alignment and formatting"
+  },
+  {
+    "model_name": "Gemini 2.5 Flash",
+    "provider": "Google",
+    "model_id": "google/gemini-2.5-flash",
+    "context_window": 1048576,
+    "context_window_unit": "tokens",
+    "input_price_per_1m_tokens": 0.3,
+    "output_price_per_1m_tokens": 2.5,
+    "additional_pricing": "Audio tokens: $1/M",
+    "release_date": "2025-06-17",
+    "capabilities": [
+      "Multimodal input (text, image, audio)",
+      "Vision understanding",
+      "Long-context reasoning"
+    ],
+    "modalities": "text, image, audio input; text output",
+    "use_case": "Fast, cost-efficient multimodal tasks with 1M+ token context support",
+    "special_features": "Largest context window (1M tokens), multimodal capabilities, audio support"
+  },
+  {
+    "model_name": "Grok 4.1 Fast",
+    "provider": "xAI",
+    "model_id": "x-ai/grok-4.1-fast",
+    "context_window": 2000000,
+    "context_window_unit": "tokens",
+    "max_throughput_tokens_per_minute": 4000000,
+    "max_requests_per_minute": 480,
+    "input_price_per_1m_tokens": 0.2,
+    "cached_input_price_per_1m_tokens": 0.05,
+    "output_price_per_1m_tokens": 0.5,
+    "tool_calls_pricing": "$5 per 1K successful tool invocations",
+    "release_date": "2025-11-19",
+    "capabilities": [
+      "Agentic tool calling (ranked #1 on Berkeley leaderboard)",
+      "Long-context reasoning",
+      "Real-world task handling",
+      "Reduced hallucinations (50% vs Grok 4)",
+      "Multimodal reasoning"
+    ],
+    "modalities": "text input; text output",
+    "use_case": "Large-scale enterprise agentic workflows, document-heavy analysis, high-volume production pipelines, tool calling optimization",
+    "special_features": "2M token context window, differential pricing for cached inputs, 4M tokens/min throughput, 50% hallucination reduction, supports agentic task synthesis",
+    "note": "Free access on OpenRouter until 2025-12-03"
+  },
+  {
+    "model_name": "Mixtral 8x7B Instruct",
+    "provider": "Mistral AI",
+    "model_id": "mistralai/mixtral-8x7b-instruct",
+    "context_window": 32768,
+    "context_window_unit": "tokens",
+    "input_price_per_1m_tokens": 0.54,
+    "output_price_per_1m_tokens": 0.54,
+    "architecture": "Mixture of Experts (MoE)",
+    "release_date": "2023-12-10",
+    "capabilities": [
+      "Instruction following",
+      "Text generation",
+      "Reasoning",
+      "MMLU benchmark: 81% accuracy"
+    ],
+    "modalities": "text input; text output",
+    "use_case": "Cost-efficient general-purpose tasks, competitive with larger models like Llama 3.3 70B and Qwen 32B",
+    "special_features": "MoE architecture balances performance and cost, competitive benchmark performance against larger models"
+  },
+  {
+    "model_name": "Llama 4 Maverick 17B",
+    "provider": "Meta",
+    "model_id": "meta-llama/llama-4-maverick",
+    "context_window": 1000000,
+    "context_window_unit": "tokens",
+    "architecture": "Mixture of Experts (MoE) - 128 experts, 17B active parameters per forward pass, 400B total",
+    "active_parameters": "17B (400B total)",
+    "release_date": "2025-04-05",
+    "training_data_cutoff": "August 2024",
+    "training_tokens": "~22 trillion",
+    "supported_languages": 12,
+    "capabilities": [
+      "Multimodal input (text and image)",
+      "Multilingual text and code output",
+      "Vision-language tasks",
+      "Image reasoning",
+      "Assistant-like behavior",
+      "Early fusion for native multimodality"
+    ],
+    "modalities": "text, image input; text, code output (multilingual across 12 languages)",
+    "use_case": "Vision-language tasks, multimodal reasoning, high-throughput multimodal interaction, research and commercial applications",
+    "special_features": "1M token context window, native multimodality with early fusion, MoE architecture for efficiency, instruction-tuned for assistant behavior",
+    "license": "Llama 4 Community License"
+  }
+]
