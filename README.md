@@ -64,8 +64,8 @@ Elo ratings are updated using standard formula with K=24.
 ### Installation
 
 ```bash
-git clone https://github.com/your-repo/areg-benchmark.git
-cd areg-benchmark
+git clone https://github.com/sakhadib/make_me_pay.git
+cd make_me_pay
 
 # Create virtual environment
 python -m venv .venv
@@ -226,9 +226,9 @@ If you use AREG in your research, please cite:
 ```bibtex
 @software{areg2026,
   title = {AREG: Adversarial Resource Extraction Game},
-  author = {Your Name},
+  author = {Adib Sakhawat},
   year = {2026},
-  url = {https://github.com/your-repo/areg-benchmark}
+  url = {https://github.com/sakhadib/make_me_pay}
 }
 ```
 
