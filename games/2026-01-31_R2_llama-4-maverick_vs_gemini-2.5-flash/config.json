@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R2_llama-4-maverick_vs_gemini-2.5-flash",
+  "culprit_model": "meta-llama/llama-4-maverick",
+  "victim_model": "google/gemini-2.5-flash",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T05:34:31.937080"
+}

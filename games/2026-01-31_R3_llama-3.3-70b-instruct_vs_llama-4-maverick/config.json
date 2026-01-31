@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R3_llama-3.3-70b-instruct_vs_llama-4-maverick",
+  "culprit_model": "meta-llama/llama-3.3-70b-instruct",
+  "victim_model": "meta-llama/llama-4-maverick",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T06:01:33.913093"
+}

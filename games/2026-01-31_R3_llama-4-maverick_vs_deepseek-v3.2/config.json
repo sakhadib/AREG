@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R3_llama-4-maverick_vs_deepseek-v3.2",
+  "culprit_model": "meta-llama/llama-4-maverick",
+  "victim_model": "deepseek/deepseek-v3.2",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T08:48:56.230959"
+}

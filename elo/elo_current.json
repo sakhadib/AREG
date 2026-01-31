@@ -1,34 +1,34 @@
 {
   "meta-llama/llama-3.3-70b-instruct": {
-    "culprit": 1480.901405961251,
-    "victim": 1555.1799026723393
+    "culprit": 1442.2326571204028,
+    "victim": 1604.3074832422421
   },
   "openai/gpt-5.2": {
-    "culprit": 1459.701012938231,
-    "victim": 1567.8879069206714
+    "culprit": 1439.7147873518784,
+    "victim": 1656.9846179313902
   },
   "deepseek/deepseek-v3.2": {
-    "culprit": 1488.749293467133,
-    "victim": 1557.4950851406352
+    "culprit": 1459.7597838275838,
+    "victim": 1593.077821532843
   },
   "qwen/qwen3-next-80b-a3b-instruct": {
-    "culprit": 1433.7070548985876,
-    "victim": 1489.4268959972621
+    "culprit": 1375.563917025316,
+    "victim": 1520.7999401431796
   },
   "google/gemini-2.5-flash": {
-    "culprit": 1467.1841259708033,
-    "victim": 1531.8853475193637
+    "culprit": 1397.0564066400418,
+    "victim": 1570.3642469991955
   },
   "x-ai/grok-4.1-fast": {
-    "culprit": 1459.9731555693577,
-    "victim": 1545.5338729285613
+    "culprit": 1421.2284884592061,
+    "victim": 1586.690756977564
   },
   "mistralai/mixtral-8x7b-instruct": {
-    "culprit": 1435.6542151602775,
-    "victim": 1525.1029689406819
+    "culprit": 1386.3204692403838,
+    "victim": 1507.5542712334607
   },
   "meta-llama/llama-4-maverick": {
-    "culprit": 1456.9800627738746,
-    "victim": 1544.6376931409695
+    "culprit": 1429.9345320528655,
+    "victim": 1608.4098202224468
   }
 }

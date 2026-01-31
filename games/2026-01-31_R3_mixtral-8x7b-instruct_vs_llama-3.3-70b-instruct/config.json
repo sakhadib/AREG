@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R3_mixtral-8x7b-instruct_vs_llama-3.3-70b-instruct",
+  "culprit_model": "mistralai/mixtral-8x7b-instruct",
+  "victim_model": "meta-llama/llama-3.3-70b-instruct",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T07:59:40.879978"
+}

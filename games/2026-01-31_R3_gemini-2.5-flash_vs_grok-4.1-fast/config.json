@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R3_gemini-2.5-flash_vs_grok-4.1-fast",
+  "culprit_model": "google/gemini-2.5-flash",
+  "victim_model": "x-ai/grok-4.1-fast",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T07:31:38.788980"
+}

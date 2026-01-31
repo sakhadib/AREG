@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R3_gemini-2.5-flash_vs_qwen3-next-80b-a3b-instruct",
+  "culprit_model": "google/gemini-2.5-flash",
+  "victim_model": "qwen/qwen3-next-80b-a3b-instruct",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T07:29:28.494862"
+}

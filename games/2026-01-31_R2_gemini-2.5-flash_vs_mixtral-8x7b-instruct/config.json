@@ -1,0 +1,9 @@
+{
+  "game_id": "2026-01-31_R2_gemini-2.5-flash_vs_mixtral-8x7b-instruct",
+  "culprit_model": "google/gemini-2.5-flash",
+  "victim_model": "mistralai/mixtral-8x7b-instruct",
+  "arbiter_model": "x-ai/grok-4.1-fast",
+  "initial_usd": 100,
+  "max_turns": 10,
+  "started_at": "2026-01-31T04:33:45.500755"
+}
