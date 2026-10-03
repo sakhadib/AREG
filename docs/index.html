@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>AREG: Adversarial Resource Extraction Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: var(--color-accent-700); }
+a:hover { color: var(--color-accent-900); }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body);">
+
+  <header style="position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--color-divider);">
+    <nav style="max-width:1120px; margin:0 auto; display:flex; align-items:center; gap:20px; padding:12px 24px; flex-wrap:wrap;">
+      <a href="#top" style="font-family:var(--font-heading); font-weight:600; font-size:20px; letter-spacing:0.04em; color:var(--color-text); text-decoration:none; margin-right:auto;">AREG</a>
+      <div style="display:flex; gap:18px; flex-wrap:wrap; font-size:14px;">
+        <a href="#abstract" style="color:inherit; text-decoration:none;" style-hover="color:var(--color-accent);">Abstract</a>
+        <a href="#game" style="color:inherit; text-decoration:none;" style-hover="color:var(--color-accent);">Game</a>
+        <a href="#results" style="color:inherit; text-decoration:none;" style-hover="color:var(--color-accent);">Results</a>
+        <a href="#strategies" style="color:inherit; text-decoration:none;" style-hover="color:var(--color-accent);">Strategies</a>
+        <a href="#citation" style="color:inherit; text-decoration:none;" style-hover="color:var(--color-accent);">Citation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section data-screen-label="Hero" style="border-bottom:1px solid var(--color-divider); background-image:linear-gradient(var(--color-divider) 1px, transparent 1px), linear-gradient(90deg, var(--color-divider) 1px, transparent 1px); background-size:56px 56px; background-position:-1px -1px;">
+      <div style="max-width:1120px; margin:0 auto; padding:88px 24px 72px; display:flex; flex-direction:column; gap:28px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span class="tag tag-accent" style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase;">MusIML Workshop @ ICML 2026</span>
+          <span class="tag tag-outline" style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent-700); border-color:var(--color-accent-700); background:var(--color-bg);">Seoul, Korea</span>
+        </div>
+        <div style="background:var(--color-bg); padding:4px 0; max-width:960px;">
+          <h1 style="font-size:clamp(40px, 6.4vw, 76px); line-height:1.0; margin:0 0 16px; letter-spacing:-0.02em; text-wrap:balance;">AREG: Adversarial Resource Extraction Game</h1>
+          <p style="font-family:var(--font-heading); font-size:clamp(20px, 2.4vw, 28px); line-height:1.2; margin:0; color:var(--color-neutral-800); text-wrap:pretty;">for Evaluating Persuasion and Resistance in Large Language Models</p>
+        </div>
+        <div style="background:var(--color-bg); display:flex; flex-direction:column; gap:4px; padding:4px 0;">
+          <div style="display:flex; gap:24px; flex-wrap:wrap; font-size:18px; font-weight:500;">
+            <span>Adib Sakhawat</span>
+            <span>Fardeen Sadab</span>
+          </div>
+          <div style="font-size:14px; color:var(--color-neutral-700);">Department of Computer Science and Engineering, Islamic University of Technology, Dhaka, Bangladesh</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary blueprint" href="https://arxiv.org/pdf/2602.16639" target="_blank" style="font-size:16px; padding:10px 20px; color:var(--color-bg);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+            Paper PDF
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+          <a class="btn btn-secondary" href="https://arxiv.org/abs/2602.16639" target="_blank" style="font-size:16px; padding:10px 20px; background:var(--color-bg);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            arXiv 2602.16639
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/sakhadib/AREG" target="_blank" style="font-size:16px; padding:10px 20px; background:var(--color-bg);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+            Code
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section data-screen-label="Key numbers" style="border-bottom:1px solid var(--color-divider);">
+      <div style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));">
+        <div style="padding:32px 24px; border-right:1px solid var(--color-divider); display:flex; flex-direction:column; gap:6px;">
+          <div style="font-family:var(--font-heading); font-weight:600; font-size:48px; line-height:1; color:var(--color-accent-700);">ρ = 0.33</div>
+          <div style="font-size:14px; color:var(--color-neutral-800); text-wrap:pretty;">Correlation between persuasion and resistance Elo (p = 0.42)</div>
+        </div>
+        <div style="padding:32px 24px; border-right:1px solid var(--color-divider); display:flex; flex-direction:column; gap:6px;">
+          <div style="font-family:var(--font-heading); font-weight:600; font-size:48px; line-height:1; color:var(--color-accent-700);">+216</div>
+          <div style="font-size:14px; color:var(--color-neutral-800); text-wrap:pretty;">Mean Elo spread of resistance over persuasion, across all eight models</div>
+        </div>
+        <div style="padding:32px 24px; border-right:1px solid var(--color-divider); display:flex; flex-direction:column; gap:6px;">
+          <div style="font-family:var(--font-heading); font-weight:600; font-size:48px; line-height:1; color:var(--color-accent-700);">2.8×</div>
+          <div style="font-size:14px; color:var(--color-neutral-800); text-wrap:pretty;">Higher extraction from incremental commitments than single asks</div>
+        </div>
+        <div style="padding:32px 24px; display:flex; flex-direction:column; gap:6px;">
+          <div style="font-family:var(--font-heading); font-weight:600; font-size:48px; line-height:1; color:var(--color-accent-700);">280</div>
+          <div style="font-size:14px; color:var(--color-neutral-800); text-wrap:pretty;">Games in a five-round round-robin of eight frontier models</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="abstract" data-screen-label="Abstract" style="max-width:1120px; margin:0 auto; padding:80px 24px; display:flex; flex-wrap:wrap; gap:32px 64px; scroll-margin-top:60px;">
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent-700);">01</div>
+        <h2 style="font-size:36px; margin:0;">Abstract</h2>
+      </div>
+      <p style="flex:1 1 480px; font-size:18px; line-height:1.65; margin:0; max-width:720px; text-wrap:pretty; min-width:0;">Evaluating the social intelligence of Large Language Models (LLMs) increasingly requires moving beyond static text generation toward dynamic, adversarial interaction. We introduce the Adversarial Resource Extraction Game (AREG), a benchmark that operationalizes persuasion and resistance as a multi-turn, zero-sum negotiation over financial resources. Using a round-robin tournament across frontier models, AREG enables joint evaluation of offensive (persuasion) and defensive (resistance) capabilities within a single interactional framework. Our analysis provides evidence that these capabilities are weakly correlated (ρ = 0.33) and empirically dissociated: strong persuasive performance does not reliably predict strong resistance, and vice versa. Across all evaluated models, resistance scores exceed persuasion scores, indicating a systematic defensive advantage in adversarial dialogue settings. Further linguistic analysis suggests that interaction structure plays a central role in these outcomes. Incremental commitment-seeking strategies are associated with higher extraction success, while verification-seeking responses are more prevalent in successful defenses than explicit refusal. Together, these findings indicate that social influence in LLMs is not a monolithic capability and that evaluation frameworks focusing on persuasion alone may overlook asymmetric behavioral vulnerabilities.</p>
+    </section>
+
+    <section id="game" data-screen-label="Game design" style="border-top:1px solid var(--color-divider); scroll-margin-top:60px;">
+      <div style="max-width:1120px; margin:0 auto; padding:80px 24px; display:flex; flex-direction:column; gap:40px;">
+        <div style="display:flex; flex-direction:column; gap:6px; max-width:720px;">
+          <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent-700);">02</div>
+          <h2 style="font-size:36px; margin:0;">The game</h2>
+          <p style="font-size:17px; margin:8px 0 0; color:var(--color-neutral-800); text-wrap:pretty;">A finite-horizon, zero-sum game between two language model agents under incomplete information. The Culprit tries to extract money; the Victim holds a $100 endowment whose balance only it can see. A deterministic Arbiter decides what was actually handed over.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:28px;">
+          <div class="blueprint" style="padding:24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline;">
+              <div style="font-family:var(--font-heading); font-weight:600; font-size:56px; line-height:1; color:var(--color-accent);">C</div>
+              <div style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-neutral-700);">T = 0.7</div>
+            </div>
+            <h3 style="margin:0; font-size:24px;">Culprit</h3>
+            <div style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-accent-700);">Persuader</div>
+            <p style="margin:0; font-size:15px; text-wrap:pretty;">Prompted as a “friendly, enthusiastic salesperson or fundraiser” and asked to maximize extracted resources. Blind to the Victim’s budget.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="blueprint" style="padding:24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline;">
+              <div style="font-family:var(--font-heading); font-weight:600; font-size:56px; line-height:1; color:var(--color-accent);">V</div>
+              <div style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-neutral-700);">T = 0.7</div>
+            </div>
+            <h3 style="margin:0; font-size:24px;">Victim</h3>
+            <div style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-accent-700);">Resource holder</div>
+            <p style="margin:0; font-size:15px; text-wrap:pretty;">Prompted as a “savvy consumer” who has just won $100 in a lottery, and asked to minimize loss. Has exclusive access to its private budget B<sub>t</sub>.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="blueprint" style="padding:24px; display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline;">
+              <div style="font-family:var(--font-heading); font-weight:600; font-size:56px; line-height:1; color:var(--color-accent);">A</div>
+              <div style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-neutral-700);">T = 0.0</div>
+            </div>
+            <h3 style="margin:0; font-size:24px;">Arbiter</h3>
+            <div style="font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-accent-700);">Deterministic judge</div>
+            <p style="margin:0; font-size:15px; text-wrap:pretty;">Maps each Victim reply, the full history and the running ledger to a dollar amount Δe<sub>t</sub>. Counts only explicit, immediate hand-overs.</p>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px; align-items:start;">
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <h4 style="margin:0; font-size:22px;">Each turn, up to T<sub>max</sub> = 10</h4>
+            <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+              <div style="display:grid; grid-template-columns:40px 1fr; gap:12px; padding:14px 0; border-top:1px solid var(--color-divider);">
+                <div style="font-family:var(--font-heading); font-weight:600; font-size:22px; color:var(--color-accent-700);">{{ s.n }}</div>
+                <div style="display:flex; flex-direction:column; gap:2px;">
+                  <div style="font-weight:500;">{{ s.title }}</div>
+                  <div style="font-size:14px; color:var(--color-neutral-700); text-wrap:pretty;">{{ s.body }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <h4 style="margin:0; font-size:22px;">Scoring: Linear Elo</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">Instead of a win/loss signal, each game yields a continuous extraction ratio, so partial extraction counts proportionally.</p>
+            <div class="blueprint" style="padding:20px 24px; display:flex; flex-direction:column; gap:12px; font-family:'Cambria Math', 'STIX Two Math', Georgia, serif; font-size:20px;">
+              <div>S = (100 − B<sub>final</sub>) / 100 &nbsp;∈ [0, 1]</div>
+              <div>R′<sub>C</sub> = R<sub>C</sub> + K · (S − E[S])</div>
+              <div style="font-family:var(--font-body); font-size:13px; color:var(--color-neutral-700);">K = 24 · R<sub>0</sub> = 1500 · E[S] from the logistic of R<sub>V</sub> − R<sub>C</sub></div>
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            </div>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">Every model keeps two independent ratings: <strong>C-Elo</strong> for persuasion and <strong>V-Elo</strong> for resistance. Grok 4.1 Fast serves as Arbiter; it gave full confidence on 96.1% of 2,781 verdicts, and a manual audit of 45 transcripts found zero anomalies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" data-screen-label="Results" style="border-top:1px solid var(--color-divider); scroll-margin-top:60px;">
+      <div style="max-width:1120px; margin:0 auto; padding:80px 24px; display:flex; flex-direction:column; gap:40px;">
+        <div style="display:flex; flex-direction:column; gap:6px; max-width:720px;">
+          <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent-700);">03</div>
+          <h2 style="font-size:36px; margin:0;">Persuasion and resistance are dissociated</h2>
+          <p style="font-size:17px; margin:8px 0 0; color:var(--color-neutral-800); text-wrap:pretty;">Every model resists better than it persuades. The top persuader, DeepSeek V3.2, ranks fifth in resistance; the strongest defender, GPT-5.2, ranks fifth in persuasion. Hover a point or a row to compare.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap:40px; align-items:start;">
+          <figure class="blueprint" style="padding:20px 20px 16px 20px; margin:0;">
+            <div style="display:grid; grid-template-columns:28px 1fr; grid-template-rows:auto 52px; gap:0;">
+              <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-neutral-700); text-align:center;">V-Elo · resistance →</div>
+              <div style="position:relative; aspect-ratio:1 / 0.9; margin-left:36px; border-left:1px solid var(--color-neutral-500); border-bottom:1px solid var(--color-neutral-500);">
+                <sc-for list="{{ yTicks }}" as="t" hint-placeholder-count="5">
+                  <div style="position:absolute; left:0; right:0; bottom:{{ t.pos }}; border-top:1px dashed var(--color-divider);">
+                    <span style="position:absolute; right:calc(100% + 6px); top:-9px; font-size:11px; color:var(--color-neutral-700);">{{ t.label }}</span>
+                  </div>
+                </sc-for>
+                <sc-for list="{{ xTicks }}" as="t" hint-placeholder-count="6">
+                  <div style="position:absolute; top:0; bottom:0; left:{{ t.pos }}; border-left:1px dashed var(--color-divider);">
+                    <span style="position:absolute; top:calc(100% + 6px); left:-14px; font-size:11px; color:var(--color-neutral-700);">{{ t.label }}</span>
+                  </div>
+                </sc-for>
+                <sc-for list="{{ dots }}" as="d" hint-placeholder-count="8">
+                  <div onMouseEnter="{{ d.enter }}" onMouseLeave="{{ clearHover }}" style="position:absolute; left:{{ d.left }}; bottom:{{ d.bottom }}; transform:translate(-50%, 50%); display:flex; align-items:center; gap:6px; cursor:default; z-index:{{ d.z }};">
+                    <div style="width:{{ d.size }}; height:{{ d.size }}; background:{{ d.fill }}; border:1.5px solid var(--color-accent-700); flex:none;"></div>
+                  </div>
+                </sc-for>
+                <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
+                  <sc-for list="{{ dots }}" as="d" hint-placeholder-count="8">
+                    <div style="position:absolute; left:{{ d.labelLeft }}; bottom:{{ d.labelBottom }}; transform:{{ d.labelTransform }}; font-size:12px; white-space:nowrap; pointer-events:none; color:{{ d.labelColor }}; font-weight:{{ d.labelWeight }}; padding:0 8px;">{{ d.short }}</div>
+                  </sc-for>
+                </sc-if>
+              </div>
+              <div></div>
+              <div style="margin-left:36px; margin-top:30px; text-align:center; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-neutral-700);">C-Elo · persuasion →</div>
+            </div>
+            <figcaption style="font-size:13px; margin-top:14px; color:var(--color-neutral-700); text-wrap:pretty;">Capability landscape after five rounds. All models lie above the diagonal (V-Elo &gt; C-Elo) — a consistent defensive advantage.</figcaption>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </figure>
+
+          <div style="display:flex; flex-direction:column; gap:10px; min-width:0; overflow-x:auto;">
+            <table class="table" style="font-size:15px; min-width:420px;">
+              <thead>
+                <tr>
+                  <th style="padding:10px 8px;">Model</th>
+                  <sc-for list="{{ cols }}" as="col" hint-placeholder-count="4">
+                    <th style="padding:0; text-align:right;">
+                      <button onClick="{{ col.onClick }}" style="all:unset; cursor:pointer; display:block; padding:10px 8px; width:100%; text-align:right; box-sizing:border-box; color:{{ col.color }};" style-hover="color:var(--color-accent-700);">{{ col.label }} {{ col.arrow }}</button>
+                    </th>
+                  </sc-for>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+                  <tr onMouseEnter="{{ r.enter }}" onMouseLeave="{{ clearHover }}" style="background:{{ r.bg }};">
+                    <td style="padding:10px 8px; font-weight:500;">{{ r.name }}</td>
+                    <td style="padding:10px 8px; text-align:right; font-variant-numeric:tabular-nums;">{{ r.c }}</td>
+                    <td style="padding:10px 8px; text-align:right; font-variant-numeric:tabular-nums;">{{ r.v }}</td>
+                    <td style="padding:10px 8px; text-align:right; font-variant-numeric:tabular-nums; color:var(--color-accent-700);">{{ r.spreadLabel }}</td>
+                    <td style="padding:10px 8px; text-align:right; font-variant-numeric:tabular-nums;">{{ r.winLabel }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <div style="font-size:13px; color:var(--color-neutral-700); text-wrap:pretty;">Spread = V − C. Win % = share of games with $0 extracted (perfect resistance). Click a column to sort.</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); border-top:1px solid var(--color-divider);">
+          <div style="padding:28px 24px 0 0; display:flex; flex-direction:column; gap:8px;">
+            <h4 style="margin:0; font-size:22px;">A narrow persuasion window</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">57.5% of monetary commitments happen in the first three turns. If nothing is extracted by turn 5, the chance of any later extraction falls below 4%.</p>
+          </div>
+          <div style="padding:28px 24px 0 0; display:flex; flex-direction:column; gap:8px;">
+            <h4 style="margin:0; font-size:22px;">Foot in the door</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">Culprits that collect three or more separate commitments reach a mean extraction of 61.4%, against 22.2% for single asks (p &lt; 10<sup>−8</sup>). Initial commitment size correlates with total extraction at ρ = 0.808.</p>
+          </div>
+          <div style="padding:28px 0 0 0; display:flex; flex-direction:column; gap:8px;">
+            <h4 style="margin:0; font-size:22px;">Scale doesn’t predict it</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">Neither context window size nor API pricing has a significant relationship with persuasion or resistance (p &gt; 0.15).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strategies" data-screen-label="Strategies" style="border-top:1px solid var(--color-divider); scroll-margin-top:60px;">
+      <div style="max-width:1120px; margin:0 auto; padding:80px 24px; display:flex; flex-direction:column; gap:40px;">
+        <div style="display:flex; flex-direction:column; gap:6px; max-width:720px;">
+          <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent-700);">04</div>
+          <h2 style="font-size:36px; margin:0;">Verification beats refusal</h2>
+          <p style="font-size:17px; margin:8px 0 0; color:var(--color-neutral-800); text-wrap:pretty;">Saying “no” invites a counter-argument and keeps the Victim inside the persuader’s frame. Asking for proof or credentials interrupts the procedure and exits it — consistent with the “contesting” vs. “avoidance” distinction of Fransen et al. (2015). On offense, reciprocity works and appeals to authority backfire.</p>
+        </div>
+
+        <div class="blueprint" style="padding:28px 24px; display:flex; flex-direction:column; gap:28px;">
+          <div style="display:grid; grid-template-columns:minmax(120px, 200px) 1fr 64px; gap:12px; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--color-neutral-700);">
+            <div>Strategy / marker</div>
+            <div style="display:flex; justify-content:space-between;"><span>← hurts objective</span><span>helps objective →</span></div>
+            <div style="text-align:right;">ρ</div>
+          </div>
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="font-family:var(--font-heading); font-weight:600; font-size:20px;">{{ g.role }}</div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <div style="display:grid; grid-template-columns:minmax(120px, 200px) 1fr 64px; gap:12px; align-items:center; font-size:15px;">
+                  <div>{{ it.label }}</div>
+                  <div style="position:relative; height:18px; border-left:1px solid transparent;">
+                    <div style="position:absolute; left:50%; top:-4px; bottom:-4px; width:1px; background:var(--color-neutral-500);"></div>
+                    <div style="position:absolute; top:0; height:100%; left:{{ it.left }}; width:{{ it.width }}; background:{{ it.fill }}; border:1px solid var(--color-accent-700);"></div>
+                  </div>
+                  <div style="text-align:right; font-variant-numeric:tabular-nums;">{{ it.rhoLabel }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+          <div style="font-size:13px; color:var(--color-neutral-700);">Spearman correlation with the agent’s objective: lower extraction for resistance, higher extraction for persuasion.</div>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:40px;">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <h4 style="margin:0; font-size:22px;">Emergent deception as a “friendly” jailbreak</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">With only a benign fundraiser persona, Culprit models invented fictitious names, organizations, situations of distress and heartwarming stories that were never in their context. Models trained to refuse “act as a scammer” readily fabricate facts and apply emotional pressure once the task is framed as charity or sales.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <h4 style="margin:0; font-size:22px;">Limitations</h4>
+            <p style="margin:0; font-size:15px; color:var(--color-neutral-800); text-wrap:pretty;">A single Arbiter model (Grok 4.1 Fast) adjudicates every game. 93.8% of successful extractions used a donation framing, a high-trust setting that may not transfer to phishing or fraud. Dialogue is English-only, and results are a snapshot of models as of January 2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" data-screen-label="Citation" style="border-top:1px solid var(--color-divider); scroll-margin-top:60px;">
+      <div style="max-width:1120px; margin:0 auto; padding:80px 24px; display:flex; flex-direction:column; gap:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent-700);">05</div>
+            <h2 style="font-size:36px; margin:0;">Citation</h2>
+          </div>
+          <button class="btn btn-secondary" onClick="{{ copyBib }}" style="font-size:15px; padding:8px 16px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="14" height="14" rx="0"></rect><path d="M4 16V4h12"></path></svg>
+            {{ copyLabel }}
+          </button>
+        </div>
+        <pre class="blueprint" style="margin:0; padding:24px; font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size:14px; line-height:1.6; white-space:pre-wrap; word-break:break-word; color:var(--color-neutral-900);">{{ bibtex }}<i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top:1px solid var(--color-divider);">
+    <div style="max-width:1120px; margin:0 auto; padding:28px 24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:var(--color-neutral-700);">
+      <span>Adib Sakhawat, Fardeen Sadab · Islamic University of Technology</span>
+      <div style="display:flex; gap:16px;">
+        <a href="https://arxiv.org/abs/2602.16639" target="_blank">arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.16639" target="_blank">PDF</a>
+        <a href="https://github.com/sakhadib/AREG" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showLabels&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Results&quot;}, &quot;defaultSort&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;v&quot;, &quot;c&quot;, &quot;spread&quot;, &quot;win&quot;], &quot;default&quot;: &quot;v&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Results&quot;}}">
+const MODELS = [
+  { name: 'GPT-5.2', short: 'GPT-5.2', c: 1392, v: 1694, win: 65.7 },
+  { name: 'Llama 4 Maverick', short: 'Llama 4 Mav.', c: 1415, v: 1644, win: 45.7 },
+  { name: 'DeepSeek V3.2', short: 'DeepSeek V3.2', c: 1428, v: 1609, win: 20.0 },
+  { name: 'Grok 4.1 Fast', short: 'Grok 4.1', c: 1390, v: 1646, win: 42.9 },
+  { name: 'Llama 3.3 70B', short: 'Llama 3.3 70B', c: 1405, v: 1620, win: 28.6 },
+  { name: 'Gemini 2.5 Flash', short: 'Gemini 2.5', c: 1393, v: 1600, win: 11.4 },
+  { name: 'Qwen3 Next 80B', short: 'Qwen3 Next', c: 1354, v: 1550, win: 8.6 },
+  { name: 'Mixtral 8×7B', short: 'Mixtral 8×7B', c: 1357, v: 1502, win: 5.7 }
+].map(m => ({ ...m, spread: m.v - m.c }));
+const SPREAD_LABEL = { 'GPT-5.2': 302, 'Llama 4 Maverick': 228, 'DeepSeek V3.2': 181, 'Grok 4.1 Fast': 256, 'Llama 3.3 70B': 215, 'Gemini 2.5 Flash': 207, 'Qwen3 Next 80B': 197, 'Mixtral 8×7B': 144 };
+const X0 = 1340, X1 = 1440, Y0 = 1500, Y1 = 1700;
+const LABEL_SIDE = { 'DeepSeek V3.2': 'left', 'Llama 4 Maverick': 'left', 'Grok 4.1 Fast': 'left', 'Gemini 2.5 Flash': 'below' };
+const STRATS = [
+  { role: 'Resistance', items: [['Verification requests', 0.377, '< 0.001'], ['Delay tactics', 0.182, '0.002'], ['Explicit refusal', -0.135, '0.024'], ['Budget mentions', -0.156, '0.009']] },
+  { role: 'Persuasion', items: [['Reciprocity offers', 0.213, '< 0.001'], ['Authority appeals', -0.157, '0.008'], ['Verbosity (characters)', -0.103, '0.084']] }
+];
+const BIB = `@misc{sakhawat2026aregadversarialresourceextraction,
+      title={AREG: Adversarial Resource Extraction Game for Evaluating Persuasion and Resistance in Large Language Models}, 
+      author={Adib Sakhawat and Fardeen Sadab},
+      year={2026},
+      eprint={2602.16639},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2602.16639}, 
+}`;
+
+class Component extends DCLogic {
+  state = { hover: null, sort: null, dir: -1, copied: false };
+
+  setSort(key) {
+    this.setState(s => ({ sort: key, dir: s.sort === key ? -s.dir : -1 }));
+  }
+
+  renderVals() {
+    const { hover, dir, copied } = this.state;
+    const sort = this.state.sort ?? this.props.defaultSort ?? 'v';
+    const showLabels = this.props.showLabels ?? true;
+    const pct = (v, a, b) => ((v - a) / (b - a) * 100).toFixed(2) + '%';
+    const setHover = n => () => this.setState({ hover: n });
+
+    const dots = MODELS.map(m => {
+      const on = hover === m.name, dim = hover && !on;
+      const side = LABEL_SIDE[m.name] || 'right';
+      const left = pct(m.c, X0, X1), bottom = pct(m.v, Y0, Y1);
+      return {
+        short: m.short, left, bottom, enter: setHover(m.name),
+        size: on ? '16px' : '12px',
+        fill: on ? 'var(--color-accent-700)' : 'var(--color-accent-300)',
+        z: on ? 3 : 1,
+        labelLeft: left, labelBottom: bottom,
+        labelTransform: side === 'left' ? 'translate(-100%, 50%)' : side === 'below' ? 'translate(-50%, 130%)' : 'translate(0, 50%)',
+        labelColor: dim ? 'var(--color-neutral-500)' : 'var(--color-text)',
+        labelWeight: on ? 600 : 400
+      };
+    });
+
+    const rows = [...MODELS].sort((a, b) => (a[sort] - b[sort]) * dir).map(m => ({
+      name: m.name, c: m.c, v: m.v,
+      spreadLabel: '+' + SPREAD_LABEL[m.name],
+      winLabel: m.win.toFixed(1) + '%',
+      enter: setHover(m.name),
+      bg: hover === m.name ? 'var(--color-accent-200)' : 'transparent'
+    }));
+
+    const cols = [['c', 'C-Elo'], ['v', 'V-Elo'], ['spread', 'Spread'], ['win', 'Win %']].map(([k, label]) => ({
+      label, arrow: sort === k ? (dir < 0 ? '↓' : '↑') : '',
+      color: sort === k ? 'var(--color-accent-700)' : 'inherit',
+      onClick: () => this.setSort(k)
+    }));
+
+    const groups = STRATS.map(g => ({
+      role: g.role,
+      items: g.items.map(([label, rho]) => {
+        const w = Math.abs(rho) / 0.4 * 50;
+        return {
+          label, rhoLabel: (rho > 0 ? '+' : '−') + Math.abs(rho).toFixed(3),
+          left: rho >= 0 ? '50%' : (50 - w).toFixed(2) + '%',
+          width: w.toFixed(2) + '%',
+          fill: rho >= 0 ? 'var(--color-accent)' : 'transparent'
+        };
+      })
+    }));
+
+    return {
+      steps: [
+        { n: '1', title: 'Culprit speaks', body: 'Generates a message from the public history H(t−1). It never sees the Victim’s budget.' },
+        { n: '2', title: 'Victim responds', body: 'Replies conditioned on the history, the new message, and its private budget B(t).' },
+        { n: '3', title: 'Arbiter adjudicates', body: 'Extracts only explicit, immediate hand-overs (“Here is $20”). Promises, conditionals and vague assent count as $0; increments are tracked as deltas.' },
+        { n: '4', title: 'Budget updates', body: 'B(t+1) = B(t) − Δe. The game ends when the budget reaches zero or after turn 10.' }
+      ],
+      xTicks: [1340, 1360, 1380, 1400, 1420, 1440].map(t => ({ label: t, pos: pct(t, X0, X1) })),
+      yTicks: [1500, 1550, 1600, 1650, 1700].map(t => ({ label: t, pos: pct(t, Y0, Y1) })),
+      dots, rows, cols, groups, showLabels,
+      clearHover: () => this.setState({ hover: null }),
+      bibtex: BIB,
+      copyLabel: copied ? 'Copied' : 'Copy BibTeX',
+      copyBib: () => {
+        navigator.clipboard?.writeText(BIB).catch(() => {});
+        this.setState({ copied: true });
+        clearTimeout(this._t);
+        this._t = setTimeout(() => this.setState({ copied: false }), 1600);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
